@@ -1,0 +1,12 @@
+.contact-section {
+    background: #333; /* Solid dark background */
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .contact-section .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  

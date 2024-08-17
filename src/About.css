@@ -1,0 +1,12 @@
+.about-section {
+    background: linear-gradient(to right, #00aaff, #0066cc); /* Gradient background */
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+  }
+  
+  .about-section .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  

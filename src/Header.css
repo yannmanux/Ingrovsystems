@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(248, 246, 246, 0.7); /* Semi-transparent background */
+    color: rgb(1, 1, 1);
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(247, 246, 246, 0.1); /* Optional shadow for better visibility */
+  }
+  
+  .header.scrolled {
+    background-color: rgba(255, 253, 253, 0.9); /* Darker background when scrolled */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    color: rgb(12, 12, 12);
+    text-decoration: none;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
