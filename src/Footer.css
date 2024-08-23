@@ -20,3 +20,14 @@
 .footer a:hover {
   text-decoration: underline;
 }
+
+.social-media a {
+  margin-right: 15px; /* Adds space between links */
+  color: inherit; /* Optional: to inherit color from parent */
+  text-decoration: none; /* Optional: to remove underline */
+}
+
+.social-media a:last-child {
+  margin-right: 0; /* Remove margin from the last link */
+}
+

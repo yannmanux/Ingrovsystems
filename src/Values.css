@@ -1,0 +1,24 @@
+.values-section {
+    padding: 40px;
+    background-color: #eef2f3;
+    text-align: center;
+  }
+  
+  .values-section h3 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .values-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .values-section li {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0;
+  }
+  
