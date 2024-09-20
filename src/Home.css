@@ -1,37 +1,79 @@
-/* Home.css */
-
 .home {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 20px;
-  color: #333;
+  color: #ffffff; /* Slightly lighter gray for better contrast */
+  background-color: #121212; /* Dark background */
 }
 
+/* Hero Section */
 .hero {
-  background: linear-gradient(to right, #4a90e2, #9013fe);
-  color: rgb(255, 255, 255);
+  color: white;
   padding: 60px 20px;
   text-align: center;
   border-radius: 8px;
+  background-image: url('../src/assets/images/ai_software.png'); /* Replace with actual URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* Allows overlay to be positioned */
+  min-height: 400px; /* Ensures the hero section has some height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  z-index: 1; /* Places the overlay behind the text */
+}
+
+/* Text Styling */
+.hero h1, .hero p {
+  position: relative;
+  z-index: 2; /* Ensures text appears above the overlay */
+  animation: fadeIn 2s ease-in-out; /* Animates the text on load */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Additional Styling for readability */
 .hero h1 {
-  font-size: 2.5em;
-  margin: 0;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Soft shadow for better readability */
 }
 
 .hero p {
-  font-size: 1.2em;
+  font-size: 1.7rem;
+  margin-bottom: 0;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); /* Soft shadow */
 }
 
-.hero-button {
-  background-color: #f39c12;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
+/* For smaller screens */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
 }
 
 .services {
@@ -45,32 +87,410 @@
 }
 
 .service-card {
-  background: #f5f5f5;
+  background: #1e1e1e;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-between; /* Evenly distribute space */
+  min-height: 300px; /* Set a consistent minimum height */
+  max-height: 400px; /* Optional: Limit maximum height */
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
 }
 
+
 .learn-more-button {
-  background-color: #3498db;
+  background-color: #3c474f;
   color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Ensures button stays at the bottom */
 }
 
-.social-proof {
-  margin: 40px 0;
+.learn-more-button:hover {
+  background-color: #2980b9;
+}
+
+.animated-heading {
+  font-size: 3rem; /* Large text size */
+  font-weight: bold;
+  background: linear-gradient(90deg, #3498db, #8e44ad, #e74c3c, #f1c40f);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  color: transparent; /* Make the text itself transparent to allow the gradient to show */
+  animation: gradientMove 8s ease infinite;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Glow effect */
+.animated-heading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Animation for gradient movement */
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+/* Hover effects */
+.animated-heading:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.animated-heading:hover::after {
+  opacity: 1; /* Show glowing effect on hover */
+}
+
+/* Additional styles for mobile screens */
+@media (max-width: 768px) {
+  .animated-heading {
+    font-size: 2.5rem; /* Reduce text size on smaller screens */
+  }
+}
+
+/* Real-World Usage Section */
+.real-world-usage {
+  padding: 40px 20px;
+  background-color: #121212; /* Dark background */
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #2c2c2c; /* Darker outline */
+  text-align: center;
+  margin: 40px 0; /* Adds spacing around the section */
+}
+
+body {
+  background-color: #000000; /* Set the background to black */
+  color: #ffffff; /* Set the default text color to white for better readability */
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Content Layout */
+.real-world-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.real-world-image {
+  max-width: 400px;
+  border-radius: 12px; /* Slightly rounded image corners */
+  margin: 20px;
+}
+
+.real-world-text {
+  max-width: 600px;
+  text-align: left;
+  margin: 20px;
+  color: #e0e0e0;
+}
+
+.real-world-text p {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .real-world-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .real-world-text {
+    text-align: center;
+  }
+
+  .real-world-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Commitment Section */
+.commitment {
+  padding: 60px 20px;
+  background-color: #121212; /* Dark background */
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #2c2c2c; /* Darker outline */
+  margin: 40px 0; /* Adds spacing around the section */
+}
+
+/* Commitment Hero */
+.commitment-hero {
   text-align: center;
 }
 
-.testimonial {
-  font-style: italic;
-  margin: 10px 0;
+.commitment-hero h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Soft shadow for better readability */
+  animation: fadeIn 2s ease-in-out;
 }
+
+/* Commitment Content */
+.commitment-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.commitment-image {
+  max-width: 500px;
+  border-radius: 12px; /* Slightly rounded image corners */
+  margin: 20px;
+}
+
+.commitment-text {
+  max-width: 600px;
+  text-align: left;
+  margin: 20px;
+  color: #e0e0e0;
+}
+
+.commitment-text p {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .commitment-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .commitment-text {
+    text-align: center;
+  }
+
+  .commitment-image {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Our Stories Section */
+.our-stories {
+  padding: 60px 20px;
+  background-color: #121212; /* Dark background */
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #2c2c2c; /* Darker outline */
+  margin: 40px 0; /* Adds spacing around the section */
+}
+
+/* Stories Header */
+.stories-header {
+  text-align: center;
+}
+
+.stories-header h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Soft shadow for better readability */
+  animation: fadeIn 2s ease-in-out;
+}
+
+.stories-header p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-top: 10px;
+}
+
+/* Stories Content */
+.stories-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.story-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #f0f0f0;
+  flex: 1;
+  max-width: 30%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+}
+
+.story-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.story-card h3 {
+  font-size: 1.5rem;
+  color: #f5f5f5;
+  margin-bottom: 10px;
+}
+
+.story-card p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .stories-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .story-card {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Join INGROV SYSTEMS Section */
+.join-section {
+  padding: 60px 20px;
+  background-color: #121212; /* Dark background */
+  border-radius: 12px; /* Rounded corners */
+  border: 2px solid #2c2c2c; /* Darker outline */
+  margin: 40px 0; /* Adds spacing around the section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Join Content Layout */
+.join-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.join-image {
+  max-width: 50%;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.join-text {
+  max-width: 50%;
+}
+
+.join-text h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Soft shadow for better readability */
+  animation: fadeIn 2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.join-text p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .join-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .join-image {
+    max-width: 80%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .join-text {
+    max-width: 100%;
+  }
+}
+
+h2.animated-heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3498db, #8e44ad, #e74c3c, #f1c40f);
+  background-size: 400%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientMove 8s ease infinite;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
