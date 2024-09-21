@@ -1,0 +1,59 @@
+.expertise-cards {
+  display: flex;
+  flex-direction: column; /* Align cards vertically */
+  align-items: center; /* Center cards horizontally */
+  gap: 40px; /* Space between cards */
+}
+
+.expertise-card {
+  display: flex;
+  flex-direction: row; /* Align content horizontally */
+  align-items: center; /* Center content vertically */
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #f0f0f0;
+  width: 80%; /* Set a width for the cards */
+}
+
+.expertise-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+}
+
+.expertise-card-image {
+  width: 300px; /* Adjust the image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-right: 20px; /* Space between image and text */
+}
+
+.expertise-card-content {
+  flex-grow: 1; /* Allow the content to grow and take available space */
+}
+
+.expertise-card h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3498db, #8e44ad, #e74c3c, #f1c40f);
+  background-size: 400%;
+ -webkit-background-clip: text;
+ color: transparent;
+ animation: gradientMove 8s ease infinite;
+ margin-bottom: 15px;
+ text-align: left; /* Align the title to the left */
+}
+
+.expertise-card p {
+ font-size: 1rem;
+ color: #e0e0e0;
+ line-height: 1.5;
+}
+
+
+@keyframes gradientMove {
+   from { background-position: 0%; }
+   to { background-position: 400%; }
+}

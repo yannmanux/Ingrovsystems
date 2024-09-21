@@ -1,12 +1,71 @@
-.contact-section {
-    background: #333; /* Solid dark background */
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-  }
-  
-  .contact-section .content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
+.contact {
+  padding: 60px 20px;
+  background-color: #121212; /* Dark background */
+  border-radius: 12px; /* Rounded corners */
+  color: #ffffff; /* Text color */
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px; /* Increased max-width for better layout */
+  margin: auto; /* Center content */
+}
+
+.contact-image {
+  width: 400px; /* Adjust the image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-right: 40px; /* Space between image and text */
+}
+
+.contact-text {
+  flex-grow: 1; /* Allow the text to grow and take available space */
+}
+
+.animated-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3498db, #8e44ad, #e74c3c, #f1c40f);
+  background-size: 400%;
+ -webkit-background-clip: text;
+ color: transparent;
+ animation: gradientMove 8s ease infinite;
+ margin-bottom: 20px; /* Reduced margin for better spacing */
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+}
+
+.contact-form label {
+  margin-top: 10px; /* Space above each label */
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px; /* Space between label and input/textarea */
+}
+
+.contact-form button {
+  margin-top: 15px; /* Space above button */
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db; /* Button color */
+  color: white; /* Button text color */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.contact-form button:hover {
+   background-color: #2980b9; /* Darker shade on hover */
+}
+
+@keyframes gradientMove {
+   from { background-position: 0%; }
+   to { background-position: 400%; }
+}

@@ -1,20 +1,49 @@
-.history-section {
-    padding: 40px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .history-section h3 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .history-section p {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
+.history {
+  padding: 60px 20px;
+  background-color: #121212; /* Dark background */
+  border-radius: 12px; /* Rounded corners */
+  color: #ffffff; /* Text color */
+}
+
+.history-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px; /* Increased max-width for better layout */
+  margin: auto; /* Center content */
+}
+
+.history-image {
+  width: 400px; /* Adjust the image width as needed */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+  margin-right: 40px; /* Space between image and text */
+}
+
+.history-text {
+  flex-grow: 1; /* Allow the text to grow and take available space */
+}
+
+.animated-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #3498db, #8e44ad, #e74c3c, #f1c40f);
+  background-size: 400%;
+ -webkit-background-clip: text;
+ color: transparent;
+ animation: gradientMove 8s ease infinite;
+ margin-bottom: 20px; /* Reduced margin for better spacing */
+}
+
+.history-milestones {
+  list-style-type: none; /* Remove bullet points */
+  padding-left: 0; /* Remove default padding */
+}
+
+.history-milestones li {
+  margin-bottom: 10px; /* Reduced spacing between list items */
+}
+
+@keyframes gradientMove {
+   from { background-position: 0%; }
+   to { background-position: 400%; }
+}

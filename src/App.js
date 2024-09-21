@@ -6,8 +6,11 @@ import Home from '../src/Home';
 import About from '../src/About';
 import Services from '../src/Services';
 import Contact from '../src/Contact';
+import Leadership from './Leadership';
+import History from './History';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import Expertise from '../src/Expertise'; 
 
 
 const App = () => {
@@ -19,7 +22,10 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contacts" element={<Contact />} />
+          <Route path="/expertise" element={<Expertise />} />
+          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </div>
       <Footer />
